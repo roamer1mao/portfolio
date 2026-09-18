@@ -1,0 +1,156 @@
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  background-color: #050325;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(23, 18, 145, 0.35), transparent 45%);
+}
+
+/* Floating SoundCloud player */
+.soundcloud-player {
+  position: fixed;
+  top: 76px;
+  left: 16px;
+  z-index: 60;
+  width: min(360px, calc(100vw - 32px));
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  background: rgba(16, 12, 110, 0.92);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+}
+.soundcloud-drag-handle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 28px;
+  padding: 0 10px;
+  color: #A7A3D6;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  font: 500 10px/1 "JetBrains Mono", monospace;
+  letter-spacing: 0.08em;
+}
+.soundcloud-drag-handle:active { cursor: grabbing; }
+.soundcloud-drag-icon { color: #5EEAD4; letter-spacing: -0.15em; }
+.soundcloud-player iframe {
+  display: block;
+  width: 100%;
+  height: 166px;
+  border: 0;
+}
+
+::selection {
+  background: #5EEAD4;
+  color: #050325;
+}
+
+/* Subtle grid texture behind the hero, evokes an editor canvas */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, black 40%, transparent 90%);
+}
+
+/* Header gains a background once the page scrolls */
+#site-header.is-scrolled {
+  background-color: rgba(5, 3, 37, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom-color: rgba(255,255,255,0.09);
+}
+
+/* Nav link underline */
+.nav-link {
+  position: relative;
+  padding: 4px 0;
+  transition: color .2s ease;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 1px;
+  background: #5EEAD4;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+}
+.nav-link:hover { color: #F1F0FA; }
+.nav-link.active { color: #5EEAD4; }
+.nav-link.active::after,
+.nav-link:hover::after { transform: scaleX(1); }
+
+/* Mobile hamburger -> X */
+#menu-btn[aria-expanded="true"] .menu-bar:first-child { transform: translateY(3.5px) rotate(45deg); }
+#menu-btn[aria-expanded="true"] .menu-bar:last-child  { transform: translateY(-3.5px) rotate(-45deg); }
+
+/* Terminal blinking cursor */
+.terminal-cursor { animation: blink 1s step-start infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Scroll reveal */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Skill tag pill */
+.skill-pill {
+  transition: color .2s ease, border-color .2s ease, background-color .2s ease;
+}
+.skill-pill:hover {
+  border-color: #5EEAD4;
+  color: #5EEAD4;
+}
+
+/* Project card */
+.project-card {
+  transition: border-color .25s ease, transform .25s ease;
+}
+.project-card:hover {
+  border-color: rgba(94, 234, 212, 0.5);
+  transform: translateY(-3px);
+}
+
+/* Social icon button */
+.social-btn {
+  transition: color .2s ease, border-color .2s ease, transform .2s ease;
+}
+.social-btn:hover {
+  color: #5EEAD4;
+  border-color: #5EEAD4;
+  transform: translateY(-2px);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .terminal-cursor { animation: none; }
+  .project-card:hover { transform: none; }
+}
+
+/* Visible keyboard focus */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #5EEAD4;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
