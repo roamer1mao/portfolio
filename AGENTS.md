@@ -1,28 +1,43 @@
-# Project Agents Guide
+# Portfolio Project Guide
 
 ## Purpose
 
-Personal portfolio site built with Vite.
+Personal one-page portfolio built with Vite, Vanilla JavaScript, and CSS. The owner is the intended editor and publisher.
 
-## Structure
+## Sources Of Truth
 
-- `src/`: application source
-- `public/`: static assets
-- `dist/`: build output
-- `index.html`: app entry HTML
-- `package.json`: scripts and dependencies
+- `README.md`: setup, local use, and publication checklist
+- `package.json`: runnable scripts and declared dependencies
+- `bun.lock`: dependency lock; Bun is the canonical package manager
+
+## Important Paths
+
+- `src/main.js`: page content and behavior
+- `src/style.css`: visual design and responsive styles
+- `public/`: files copied directly to the build
+- `dist/`: generated build output; never edit or commit it
 
 ## Commands
 
-- Install: `bun install` or `npm install`
-- Run: `bun run dev` or `npm run dev`
-- Build: `bun run build` or `npm run build`
-- Preview: `bun run preview` or `npm run preview`
+Run from the repository root:
 
-## Rules For Agents
+- Install: `bun install --frozen-lockfile`
+- Develop: `bun run dev`
+- Build: `bun run build`
+- Preview: `bun run preview`
 
-1. Read this file before making changes in this project.
-2. Keep UI changes consistent with the existing Vite app structure.
-3. Do not edit generated `dist/` files unless explicitly requested.
-4. Do not commit `node_modules`.
-5. Run the build command before considering production-facing changes complete.
+There is no automated test or lint script. Do not claim those checks ran.
+
+## Invariants And Boundaries
+
+- Do not introduce npm, pnpm, or Yarn lockfiles while `bun.lock` is canonical.
+- Keep `node_modules/` and `dist/` untracked.
+- Preserve the existing framework-free structure unless a framework migration is explicitly requested.
+- Treat personal profile text, contact details, and outbound links as owner-controlled content.
+- Do not add analytics, external forms, deployment workflows, or publish the site without approval.
+
+## Completion Checks
+
+- Run `bun run build` after code or asset changes.
+- For visual changes, inspect the affected desktop and mobile layouts when browser verification is available.
+- Confirm Git contains no generated output or unintended lockfile changes.
