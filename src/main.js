@@ -214,7 +214,8 @@ function setupScroll() {
   const update = () => {
     queued = false;
     const max = document.documentElement.scrollHeight - innerHeight;
-    const p = Math.min(Math.max(scrollY / (hero.offsetHeight - innerHeight), 0), 1);
+    const travel = hero.offsetHeight - innerHeight; // 0 when the hero isn't pinned (reduced motion)
+    const p = travel > 0 ? Math.min(Math.max(scrollY / travel, 0), 1) : 0;
     bar.style.setProperty("--page", (max > 0 ? scrollY / max : 0).toFixed(4));
     stage.style.setProperty("--p", p.toFixed(4));
     code.toggle(p > 0.8);
