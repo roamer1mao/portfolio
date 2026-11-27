@@ -12,7 +12,6 @@ Vite、Vanilla JavaScript、CSSで作られた1ページのポートフォリオ
 ├── src/scene.js        # ヒーローの3Dシーン（three.js、遅延読み込み）
 ├── src/cockpit.svg     # ヒーロー手前の運転席
 ├── src/code.js         # ヒーローより下のコード背景（canvas）
-├── src/welcome.webp    # 同じく背景の WELCOME
 ├── src/style.css       # スタイル
 ├── vite.config.js      # ベースパス（BASE 環境変数）
 ├── .github/workflows/  # GitHub Pages へのデプロイ

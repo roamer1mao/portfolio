@@ -209,7 +209,6 @@ function setupScroll() {
   const gear = car.querySelector("#ck-gear");
   const speed = car.querySelector("#ck-speed");
   const code = createCode(document.getElementById("code"));
-  const welcome = document.getElementById("welcome");
 
   let queued = false;
   const update = () => {
@@ -219,7 +218,6 @@ function setupScroll() {
     bar.style.setProperty("--page", (max > 0 ? scrollY / max : 0).toFixed(4));
     stage.style.setProperty("--p", p.toFixed(4));
     code.toggle(p > 0.8);
-    welcome.classList.toggle("on", p > 0.8);
 
     // scroll is the throttle: rpm climbs through five gears, speed follows
     const g = Math.min(Math.floor(p * 5), 4);

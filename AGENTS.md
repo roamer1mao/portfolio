@@ -14,7 +14,7 @@ Personal one-page portfolio built with Vite, Vanilla JavaScript, and CSS. The ow
 
 - `src/main.js`: page content and behavior
 - `src/scene.js`: hero three.js scene, loaded lazily; `src/cockpit.svg`: cockpit drawn in front of it
-- `src/code.js` + `src/welcome.webp`: backdrop that fades in below the hero
+- `src/code.js`: code backdrop that fades in below the hero
 - `vite.config.js` + `.github/workflows/deploy.yml`: Pages deploy; the workflow sets `BASE` from the repo name
 - `src/style.css`: visual design and responsive styles
 - `public/`: files copied directly to the build
