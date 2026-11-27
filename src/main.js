@@ -1,3 +1,5 @@
+import cockpit from "./cockpit.svg?raw";
+
 /* =========================================================
    CONFIG
    ここを書き換えるだけでサイトの内容を差し替えられます。
@@ -14,18 +16,9 @@ const CONFIG = {
   },
 
   skills: [
-    {
-      category: "Languages",
-      items: ["C", "C++", "C#", "Python", "Java", "Go", "Kotlin", "Lua", "Malbolge", "Objective-C", "Ruby", "Swift", "Visual Basic", "Visual Basic .NET", "Assembly", "Rust", "Dart", "R", "Scala", "Perl", "Haskell", "Erlang", "F#", "OCaml", "Elixir", "Julia", "Fortran", "COBOL", "Ada", "Lisp", "Prolog", "Scheme", "Smalltalk", "Groovy", "Crystal", "Nim", "Zig", "VHDL", "Verilog", "Matlab", "SAS", "ABAP", "PL/SQL", "T-SQL", "PowerShell", "Bash", "Fish", "Zsh", "Batch", "Makefile", "Dockerfile", "YAML", "JSON", "XML", "Markdown", "LaTeX", "HTML", "CSS", "JavaScript", "TypeScript", "PHP", "SQL", "NoSQL", "GraphQL", "REST", "SOAP", "gRPC", "WebAssembly"],
-    },
-    {
-      category: "OS",
-      items: ["Windows", "macOS", "Gentoo", "Arch Linux", "Ubuntu", "Debian", "Fedora", "CentOS", "Red Hat Enterprise Linux", "openSUSE", "FreeBSD", "OpenBSD", "NetBSD", "DragonFly BSD", "Solaris", "AIX", "HP-UX", "IRIX", "BeOS", "Haiku OS", "ReactOS", "Chrome OS", "Android", "iOS"],
-    },
-    {
-      category: "Systems",
-      items: ["systemd", "Vim script", "Shell script", "LinuxKernel", "Windows API", "Windows Forms", "Win32 API", "WebSockets", "SSH", "TCP/IP", "UDP", "HTTP", "HTTPS", "FTP", "SMTP", "POP3", "IMAP", "DNS", "DHCP", "NTP", "SNMP", "LDAP", "Kerberos", "IPSec", "OpenSSL", "GnuPG", "OpenSSH", "NAT", "iptables", "firewalld", "SELinux", "AppArmor", "systemctl", "journalctl", "strace", "ltrace", "gdb", "valgrind", "perf", "tcpdump", "wireshark", "nmap", "netstat", "ss", "traceroute", "ping", "dig", "nslookup", "curl", "wget", "rsync", "scp", "sftp", "ftp", "telnet", "ssh-keygen", "ssh-agent", "ssh-add", "ssh-copy-id", "sshfs", "smbclient", "nfs-utils", "mount", "umount", "df", "du", "lsblk", "blkid", "fdisk", "parted", "mkfs", "fsck", "mount", "umount", "lsblk", "blkid", "fdisk", "parted", "mkfs", "fsck", "mount", "umount", "lsblk", "blkid", "fdisk", "parted", "mkfs", "fsck", "nginx", "Apache", "MySQL", "PostgreSQL", "SQLite", "MongoDB", "Redis", "Memcached", "RabbitMQ", "Kafka", "Elasticsearch", "Logstash", "Kibana", "Grafana", "Prometheus", "InfluxDB", "Telegraf", "Chronograf", "Kapacitor", "docker", "docker-compose", "Kubernetes", "Helm", "Terraform", "Ansible", "Puppet", "Chef", "SaltStack", "Vagrant", "VirtualBox", "VMware", "Hyper-V", "QEMU", "KVM", "Xen", "LXC/LXD", "OpenVZ", "FreeBSD jails", "Solaris Zones", "systemctl", "journalctl", "strace", "ltrace", "gdb", "valgrind", "perf", "tcpdump", "wireshark", "nmap", "netstat", "ss", "traceroute", "ping", "dig", "nslookup", "curl", "wget", "rsync", "scp", "sftp", "ftp", "telnet"],
-    },
+    { category: "Languages", items: ["C", "C++", "C#", "Python", "Kotlin", "PHP", "SQL", "Shell script"] },
+    { category: "OS", items: ["Linux", "Windows", "Android", "macOS"] },
+    { category: "Systems", items: ["Linux kernel", "systemd", "Windows API", "MCP Server"] },
   ],
 
   projects: [
@@ -85,286 +78,192 @@ const CONFIG = {
 
 const TRANSLATIONS = {
   ja: {
-    "nav.about": "about", "nav.skills": "skills", "nav.projects": "projects", "nav.contact": "contact",
-    "actions.contact": "連絡する", "actions.projects": "プロジェクトを見る", "menu.open": "メニューを開く",
-    "hero.title": "自分が欲しいものは、<br>自分で作る。", "hero.description": "自分が欲しいものは自分で作る。主にC/C++を軸に、Android向けのKotlin、Windowsでのエージェント開発、PythonやPHPを使ったさまざまなプロジェクトに携わっています。",
+    "nav.about": "About", "nav.skills": "Skills", "nav.projects": "Projects", "nav.contact": "Contact",
+    "actions.contact": "連絡する", "actions.projects": "プロジェクトを見る",
+    "hero.title": "自分が欲しいものは、<br>自分で作る。", "hero.description": "主にC/C++を軸に、Android向けのKotlin、Windowsでのエージェント開発、PythonやPHPを使ったさまざまなプロジェクトに携わっています。",
     "about.title": "必要なものを、<br>自分の手で形にする。", "about.description": "nacut linuxとliout linuxの開発プロジェクトで責任者及びプロデューサーを務めています。自作データサーバーや自作栄養管理エージェントの制作など、自分に必要なものを自ら設計・開発しています。",
-    "stats.experience": "中心言語", "stats.projects": "Android向け", "stats.stack": "よく使う言語", "sections.skills": "使用技術", "sections.projects": "つくったもの",
-    "contact.title": "新しいプロジェクトの話、<br>お気軽にどうぞ。", "contact.description": "お仕事のご相談や雑談まで、メールまたは各SNSからお気軽にご連絡ください。", "footer.backToTop": "back to top ↑", "project.demo": "Demo", "project.code": "Code", "language.label": "EN"
+    "facts.age": "年齢", "facts.location": "拠点", "facts.role": "役割", "facts.core": "中心言語",
+    "sections.skills": "使用技術", "sections.projects": "つくったもの",
+    "contact.title": "新しいプロジェクトの話、<br>お気軽にどうぞ。", "contact.description": "お仕事のご相談や雑談まで、メールまたは各SNSからお気軽にご連絡ください。",
+    "project.demo": "Demo", "project.code": "Code", "footer.top": "トップへ戻る", "language.label": "EN"
   },
   en: {
-    "nav.about": "about", "nav.skills": "skills", "nav.projects": "projects", "nav.contact": "contact",
-    "actions.contact": "Get in touch", "actions.projects": "View projects", "menu.open": "Open menu",
-    "hero.title": "I build what<br>I need.", "hero.description": "I build what I need myself. My work spans a range of projects, centered on C/C++, with Android work in Kotlin, Windows-focused agent development, and practical projects using Python and PHP.",
+    "nav.about": "About", "nav.skills": "Skills", "nav.projects": "Projects", "nav.contact": "Contact",
+    "actions.contact": "Get in touch", "actions.projects": "View projects",
+    "hero.title": "I build what<br>I need.", "hero.description": "My work spans a range of projects, centered on C/C++, with Android work in Kotlin, Windows-focused agent development, and practical projects using Python and PHP.",
     "about.title": "Building what I need,<br>with my own hands.", "about.description": "I serve as project lead and producer for the nacut linux and liout linux development projects. I also design and build tools for myself, including a custom data server and a nutrition management agent.",
-    "stats.experience": "core language", "stats.projects": "Android", "stats.stack": "frequently used", "sections.skills": "Skills", "sections.projects": "Selected work",
-    "contact.title": "Have a project in mind?<br>Let's talk.", "contact.description": "For work inquiries or just a conversation, feel free to reach out by email or social media.", "footer.backToTop": "back to top ↑", "project.demo": "Demo", "project.code": "Code", "language.label": "JA"
+    "facts.age": "Age", "facts.location": "Based in", "facts.role": "Role", "facts.core": "Core language",
+    "sections.skills": "Skills", "sections.projects": "Selected work",
+    "contact.title": "Have a project in mind?<br>Let's talk.", "contact.description": "For work inquiries or just a conversation, feel free to reach out by email or social media.",
+    "project.demo": "Demo", "project.code": "Code", "footer.top": "Back to top", "language.label": "JA"
   }
 };
 
-let currentLanguage = new URLSearchParams(window.location.search).get("lang") === "en" || localStorage.getItem("portfolio-language") === "en" ? "en" : "ja";
+const SOUNDCLOUD = "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fnureke-522622615%2Fpump-tekk-super-slowed-trvxer&color=%23e100ff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=false";
 
-function applyLanguage(language) {
-  currentLanguage = language;
-  localStorage.setItem("portfolio-language", language);
-  document.documentElement.lang = language;
-  document.querySelectorAll("[data-i18n]").forEach((element) => {
-    element.innerHTML = TRANSLATIONS[language][element.dataset.i18n];
+let lang = new URLSearchParams(location.search).get("lang") === "en" || localStorage.getItem("portfolio-language") === "en" ? "en" : "ja";
+const t = (key) => TRANSLATIONS[lang][key];
+
+function applyLanguage(next) {
+  lang = next;
+  localStorage.setItem("portfolio-language", lang);
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    el.innerHTML = t(el.dataset.i18n);
   });
-  document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
-    element.setAttribute("aria-label", TRANSLATIONS[language][element.dataset.i18nAriaLabel]);
-  });
-  document.getElementById("language-btn").textContent = TRANSLATIONS[language]["language.label"];
+  document.getElementById("language-btn").textContent = t("language.label");
+  renderFacts(CONFIG.profile);
   renderProjects(CONFIG.projects);
-  setupScrollReveal();
 }
 
-/* =========================================================
-   Terminal typing effect
-   ========================================================= */
-function buildTerminalLines(profile) {
-  const stack = profile.stack.map((s) => `"${s}"`).join(", ");
-  return [
-    "const profile = {",
-    `  name: "${profile.name}",`,
-    `  age: ${profile.age},`,
-    `  role: "${profile.role}",`,
-    `  stack: [${stack}],`,
-    `  location: "${profile.location}",`,
-    `  status: "${profile.status}",`,
-    `  focus: "${profile.focus}",`,
-    "};",
-  ];
+function renderFacts({ age, location, role }) {
+  document.getElementById("facts").innerHTML = [
+    [t("facts.age"), age], [t("facts.location"), location], [t("facts.role"), role], [t("facts.core"), "C/C++"],
+  ]
+    .map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`)
+    .join("");
 }
 
-function typeTerminal(el, lines, opts = {}) {
-  const speed = opts.speed ?? 18;
-  const lineDelay = opts.lineDelay ?? 120;
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  if (reduceMotion) {
-    el.textContent = lines.join("\n");
-    return;
-  }
-
-  let lineIndex = 0;
-  let charIndex = 0;
-  el.textContent = "";
-
-  function step() {
-    if (lineIndex >= lines.length) return;
-    const currentLine = lines[lineIndex];
-
-    if (charIndex <= currentLine.length) {
-      const typedSoFar = lines.slice(0, lineIndex).join("\n");
-      const prefix = typedSoFar ? typedSoFar + "\n" : "";
-      el.textContent = prefix + currentLine.slice(0, charIndex);
-      charIndex++;
-      setTimeout(step, speed);
-    } else {
-      lineIndex++;
-      charIndex = 0;
-      setTimeout(step, lineDelay);
-    }
-  }
-  step();
-}
-
-/* =========================================================
-   Render skills
-   ========================================================= */
 function renderSkills(skills) {
-  const container = document.getElementById("skills-list");
-  container.innerHTML = skills
-    .map(
-      (group, i) => `
-      <div data-reveal style="transition-delay:${i * 90}ms" class="grid sm:grid-cols-[160px_1fr] gap-4 sm:gap-8 items-start pb-8 border-b border-line last:border-b-0">
-        <h3 class="font-mono text-sm text-muted pt-1">${group.category}</h3>
-        <div class="flex flex-wrap gap-2.5">
-          ${group.items
-            .map(
-              (item) => `
-            <span class="skill-pill rounded-full border border-line text-sm text-ink px-4 py-1.5">${item}</span>
-          `
-            )
-            .join("")}
-        </div>
-      </div>
-    `
-    )
+  document.getElementById("skills-list").innerHTML = skills
+    .map((g) => `
+      <div class="group">
+        <h3>${g.category}</h3>
+        <ul class="chips">${g.items.map((i) => `<li>${i}</li>`).join("")}</ul>
+      </div>`)
     .join("");
 }
 
-/* =========================================================
-   Render projects
-   ========================================================= */
 function renderProjects(projects) {
-  const container = document.getElementById("projects-list");
-  container.innerHTML = projects
-    .map(
-      (p, i) => `
-      <article data-reveal style="transition-delay:${i * 90}ms" class="project-card rounded-xl border border-line bg-surface/40 p-6 md:p-8">
-        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-          <div class="max-w-xl">
-            <h3 class="font-display text-xl md:text-2xl text-ink font-semibold">${p.title}</h3>
-            <p class="text-muted mt-3 leading-relaxed">${currentLanguage === "en" ? p.descriptionEn : p.description}</p>
-            <div class="flex flex-wrap gap-2 mt-4">
-              ${p.tags.map((t) => `<span class="font-mono text-[11px] text-accent/90 border border-accent/30 rounded px-2 py-1">${t}</span>`).join("")}
-            </div>
-          </div>
-          <div class="flex md:flex-col gap-3 shrink-0 font-mono text-sm">
-            <a href="${p.demo}" class="text-ink hover:text-accent transition-colors border-b border-line hover:border-accent pb-0.5">${TRANSLATIONS[currentLanguage]["project.demo"]}</a>
-            <a href="${p.code}" class="text-ink hover:text-accent transition-colors border-b border-line hover:border-accent pb-0.5">${TRANSLATIONS[currentLanguage]["project.code"]}</a>
-          </div>
-        </div>
-      </article>
-    `
-    )
+  document.getElementById("projects-list").innerHTML = projects
+    .map((p) => {
+      const links = [["demo", p.demo], ["code", p.code]]
+        .filter(([, url]) => url && url !== "#")
+        .map(([k, url]) => `<a href="${url}" target="_blank" rel="noopener noreferrer">${t(`project.${k}`)}</a>`)
+        .join("");
+      return `
+      <article class="project">
+        <h3>${p.title}</h3>
+        <p>${lang === "en" ? p.descriptionEn : p.description}</p>
+        <ul class="tags">${p.tags.map((tag) => `<li>${tag}</li>`).join("")}</ul>
+        ${links ? `<div class="project-links">${links}</div>` : ""}
+      </article>`;
+    })
     .join("");
 }
 
-/* =========================================================
-   Render socials
-   ========================================================= */
 function renderSocials(socials) {
-  const container = document.getElementById("social-list");
-  container.innerHTML = socials
-    .map(
-      (s) => `
-      <a href="${s.url}" target="_blank" rel="noopener noreferrer" aria-label="${s.name}"
-         class="social-btn w-11 h-11 rounded-full border border-line flex items-center justify-center text-ink">
-        <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">${s.icon}</svg>
-      </a>
-    `
-    )
+  document.getElementById("social-list").innerHTML = socials
+    .map((s) => `
+      <li><a href="${s.url}" target="_blank" rel="noopener noreferrer" aria-label="${s.name}">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">${s.icon}</svg>
+      </a></li>`)
     .join("");
 }
 
-/* =========================================================
-   Scroll reveal (IntersectionObserver)
-   ========================================================= */
-function setupScrollReveal() {
-  const targets = document.querySelectorAll("[data-reveal]");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
-  );
-  targets.forEach((t) => observer.observe(t));
-}
-
-/* =========================================================
-   Header state on scroll
-   ========================================================= */
-function setupHeaderScrollState() {
-  const header = document.getElementById("site-header");
-  const onScroll = () => {
-    header.classList.toggle("is-scrolled", window.scrollY > 12);
-  };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
-}
-
-/* =========================================================
-   Active nav link highlighting
-   ========================================================= */
 function setupActiveNav() {
-  const sections = ["about", "skills", "projects", "contact"]
-    .map((id) => document.getElementById(id))
-    .filter(Boolean);
-  const links = document.querySelectorAll(".nav-link");
-
+  const links = document.querySelectorAll(".links a");
   const observer = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          links.forEach((link) => {
-            link.classList.toggle("active", link.dataset.nav === entry.target.id);
-          });
-        }
+      entries.forEach((e) => {
+        if (e.isIntersecting) links.forEach((a) => a.classList.toggle("active", a.dataset.nav === e.target.id));
       });
     },
-    { threshold: 0.5 }
+    { rootMargin: "-45% 0px -50% 0px" }
   );
-  sections.forEach((s) => observer.observe(s));
+  document.querySelectorAll("section[id]").forEach((s) => observer.observe(s));
 }
 
-/* =========================================================
-   Mobile menu toggle
-   ========================================================= */
-function setupMobileMenu() {
-  const btn = document.getElementById("menu-btn");
-  const nav = document.getElementById("mobile-nav");
+function setupReveal() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("is-in");
+        observer.unobserve(e.target);
+      });
+    },
+    { rootMargin: "0px 0px -12% 0px" }
+  );
+  document.querySelectorAll("[data-reveal], [data-stagger]").forEach((el) => observer.observe(el));
+}
 
-  const closeMenu = () => {
-    btn.setAttribute("aria-expanded", "false");
-    nav.style.maxHeight = "0px";
+// cursor-following glow on project cards
+function setupSpotlight() {
+  document.getElementById("projects-list").addEventListener("pointermove", (e) => {
+    const card = e.target.closest(".project");
+    if (!card) return;
+    const r = card.getBoundingClientRect();
+    card.style.setProperty("--x", `${e.clientX - r.left}px`);
+    card.style.setProperty("--y", `${e.clientY - r.top}px`);
+  });
+}
+
+function setupProgress() {
+  const root = document.documentElement;
+  let queued = false;
+  const update = () => {
+    queued = false;
+    const max = root.scrollHeight - innerHeight;
+    root.style.setProperty("--page", (max > 0 ? scrollY / max : 0).toFixed(4));
+    const travel = document.getElementById("top").offsetHeight - innerHeight;
+    root.style.setProperty("--p", Math.min(Math.max(scrollY / travel, 0), 1).toFixed(4));
   };
-
-  btn.addEventListener("click", () => {
-    const isOpen = btn.getAttribute("aria-expanded") === "true";
-    btn.setAttribute("aria-expanded", String(!isOpen));
-    nav.style.maxHeight = isOpen ? "0px" : nav.scrollHeight + "px";
-  });
-
-  nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
+  addEventListener("scroll", () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(update);
+  }, { passive: true });
+  addEventListener("resize", update);
+  update();
 }
 
-function setupSoundCloudPlayer() {
-  const player = document.getElementById("soundcloud-player");
-  const handle = document.getElementById("soundcloud-drag-handle");
-  let activePointerId = null;
-  let offsetX = 0;
-  let offsetY = 0;
+function setupCockpit() {
+  const car = document.getElementById("cockpit");
+  car.innerHTML = cockpit;
+  const gear = car.querySelector("#ck-gear");
+  const speed = car.querySelector("#ck-speed");
 
-  handle.addEventListener("pointerdown", (event) => {
-    activePointerId = event.pointerId;
-    const bounds = player.getBoundingClientRect();
-    offsetX = event.clientX - bounds.left;
-    offsetY = event.clientY - bounds.top;
-    handle.setPointerCapture(activePointerId);
-  });
-
-  handle.addEventListener("pointermove", (event) => {
-    if (event.pointerId !== activePointerId) return;
-    const maxLeft = window.innerWidth - player.offsetWidth;
-    const maxTop = window.innerHeight - player.offsetHeight;
-    const left = Math.min(Math.max(0, event.clientX - offsetX), maxLeft);
-    const top = Math.min(Math.max(0, event.clientY - offsetY), maxTop);
-    player.style.left = `${left}px`;
-    player.style.top = `${top}px`;
-  });
-
-  const stopDragging = (event) => {
-    if (event.pointerId === activePointerId) activePointerId = null;
+  // scroll is the throttle: rpm climbs through five gears, speed follows
+  const drive = () => {
+    const p = parseFloat(document.documentElement.style.getPropertyValue("--p")) || 0;
+    const g = Math.min(Math.floor(p * 5), 4);
+    car.style.setProperty("--tach", (0.2 + (p * 5 - g) * 0.58 + g * 0.03).toFixed(3));
+    car.style.setProperty("--p", p);
+    gear.textContent = p < 0.01 ? "N" : g + 1;
+    speed.textContent = Math.round(p * 220);
   };
-  handle.addEventListener("pointerup", stopDragging);
-  handle.addEventListener("pointercancel", stopDragging);
+  addEventListener("scroll", () => requestAnimationFrame(drive), { passive: true });
+  drive();
+
+  addEventListener("pointermove", (e) => {
+    car.style.setProperty("--steer", `${(e.clientX / innerWidth - 0.5) * 44}deg`);
+  });
 }
 
-/* =========================================================
-   Init
-   ========================================================= */
+function toggleMusic() {
+  const box = document.getElementById("music");
+  const btn = document.getElementById("music-btn");
+  if (!box.querySelector("iframe")) {
+    box.innerHTML = `<iframe title="SoundCloud player" allow="autoplay" src="${SOUNDCLOUD}"></iframe>`;
+  }
+  box.hidden = !box.hidden;
+  btn.setAttribute("aria-expanded", String(!box.hidden));
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("year").textContent = new Date().getFullYear();
 
   renderSkills(CONFIG.skills);
-  renderProjects(CONFIG.projects);
   renderSocials(CONFIG.socials);
-  applyLanguage(currentLanguage);
-  document.getElementById("language-btn").addEventListener("click", () => applyLanguage(currentLanguage === "ja" ? "en" : "ja"));
-
-  typeTerminal(document.getElementById("terminal-code"), buildTerminalLines(CONFIG.profile));
-
-  setupScrollReveal();
-  setupHeaderScrollState();
+  applyLanguage(lang);
   setupActiveNav();
-  setupMobileMenu();
-  setupSoundCloudPlayer();
+  setupReveal();
+  setupSpotlight();
+  setupProgress();
+  setupCockpit();
+  import("./scene.js").then(({ start }) => start(document.getElementById("scene")));
+
+  document.getElementById("language-btn").addEventListener("click", () => applyLanguage(lang === "ja" ? "en" : "ja"));
+  document.getElementById("music-btn").addEventListener("click", toggleMusic);
 });

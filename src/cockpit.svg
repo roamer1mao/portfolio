@@ -1,0 +1,174 @@
+<svg viewBox="0 0 1600 420" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" role="presentation">
+<defs>
+  <linearGradient id="ck-dash" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#241a36"/><stop offset=".07" stop-color="#120c1e"/><stop offset=".4" stop-color="#09050f"/><stop offset="1" stop-color="#030106"/>
+  </linearGradient>
+  <linearGradient id="ck-door" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#1a1228"/><stop offset=".2" stop-color="#0b0714"/><stop offset="1" stop-color="#030106"/>
+  </linearGradient>
+  <radialGradient id="ck-face" cx=".5" cy=".4" r=".7"><stop offset="0" stop-color="#1a0d2e"/><stop offset="1" stop-color="#05020a"/></radialGradient>
+  <radialGradient id="ck-hub" cx=".4" cy=".3" r=".8"><stop offset="0" stop-color="#2a2038"/><stop offset="1" stop-color="#07050b"/></radialGradient>
+  <linearGradient id="ck-screen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a0f7a"/><stop offset="1" stop-color="#0c0422"/></linearGradient>
+  <linearGradient id="ck-rim" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".32"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <filter id="ck-glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="ck-soft" x="-20%" y="-300%" width="140%" height="700%"><feGaussianBlur stdDeviation="5"/></filter>
+</defs>
+
+<!-- dash -->
+<path d="M0,420 L0,172 C220,150 440,132 650,126 C700,124 730,112 780,112 L870,112 C905,112 915,68 960,66 L1150,66 C1195,68 1210,112 1250,120 C1380,134 1500,150 1600,168 L1600,420 Z" fill="url(#ck-dash)"/>
+<path d="M0,172 C220,150 440,132 650,126 C700,124 730,112 780,112 L870,112 C905,112 915,68 960,66 L1150,66 C1195,68 1210,112 1250,120 C1380,134 1500,150 1600,168" fill="none" stroke="rgba(200,150,255,.38)" stroke-width="1.6"/>
+
+<!-- ambient light strips -->
+<g fill="none" stroke="#e100ff" stroke-linecap="round">
+  <path d="M120,196 C300,182 480,170 640,166" stroke-width="3" opacity=".55" filter="url(#ck-soft)"/>
+  <path d="M120,196 C300,182 480,170 640,166" stroke-width="1.6" opacity=".95"/>
+  <path d="M1270,160 C1380,168 1490,178 1560,190" stroke-width="3" opacity=".55" filter="url(#ck-soft)"/>
+  <path d="M1270,160 C1380,168 1490,178 1560,190" stroke-width="1.6" opacity=".95"/>
+</g>
+
+<!-- vents -->
+<g>
+  <circle cx="330" cy="178" r="40" fill="#06030a" stroke="rgba(255,255,255,.22)" stroke-width="3"/>
+  <g stroke="rgba(255,255,255,.2)" stroke-width="2.2"><line x1="298" y1="166" x2="362" y2="166"/><line x1="293" y1="178" x2="367" y2="178"/><line x1="298" y1="190" x2="362" y2="190"/></g>
+  <circle cx="330" cy="178" r="43" fill="none" stroke="#e100ff" stroke-opacity=".35" stroke-width="1"/>
+  <circle cx="1410" cy="180" r="36" fill="#06030a" stroke="rgba(255,255,255,.22)" stroke-width="3"/>
+  <g stroke="rgba(255,255,255,.2)" stroke-width="2.2"><line x1="1382" y1="169" x2="1438" y2="169"/><line x1="1378" y1="180" x2="1442" y2="180"/><line x1="1382" y1="191" x2="1438" y2="191"/></g>
+  <circle cx="1410" cy="180" r="39" fill="none" stroke="#e100ff" stroke-opacity=".35" stroke-width="1"/>
+</g>
+
+<!-- center stack -->
+<g>
+  <rect x="690" y="122" width="182" height="92" rx="11" fill="#04020a" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/>
+  <rect x="699" y="131" width="164" height="74" rx="6" fill="url(#ck-screen)"/>
+  <text x="710" y="150" font-size="14" font-weight="800" fill="#f7e3ff">yu.dev</text>
+  <text x="710" y="163" font-size="7.5" fill="#cfa9ff">OS / tools / agents</text>
+  <g fill="#ff7cf6">
+    <rect class="eq" x="768" y="176" width="7" height="20" rx="2"/><rect class="eq" x="779" y="176" width="7" height="20" rx="2" style="animation-delay:-.3s"/>
+    <rect class="eq" x="790" y="176" width="7" height="20" rx="2" style="animation-delay:-.6s"/><rect class="eq" x="801" y="176" width="7" height="20" rx="2" style="animation-delay:-.15s"/>
+    <rect class="eq" x="812" y="176" width="7" height="20" rx="2" style="animation-delay:-.45s"/><rect class="eq" x="823" y="176" width="7" height="20" rx="2" style="animation-delay:-.75s"/>
+  </g>
+  <text x="710" y="196" font-size="7" fill="#a58ad6">NOW PLAYING</text>
+  <rect x="696" y="226" width="170" height="54" rx="9" fill="#09050f" stroke="rgba(255,255,255,.14)"/>
+  <circle cx="730" cy="253" r="16" fill="#0d0816" stroke="rgba(255,255,255,.32)" stroke-width="2"/><line x1="730" y1="241" x2="730" y2="248" stroke="#ff7cf6" stroke-width="2"/>
+  <circle cx="832" cy="253" r="16" fill="#0d0816" stroke="rgba(255,255,255,.32)" stroke-width="2"/><line x1="832" y1="241" x2="832" y2="248" stroke="#ff7cf6" stroke-width="2"/>
+  <text x="781" y="257" text-anchor="middle" font-size="12" font-weight="700" fill="#ff7cf6">21.0</text>
+  <path d="M640,420 L664,300 C672,284 752,284 760,300 L786,420 Z" fill="#07040c" stroke="rgba(200,150,255,.22)"/>
+  <g fill="#120c1c" stroke="rgba(255,255,255,.12)"><rect x="672" y="332" width="30" height="14" rx="4"/><rect x="722" y="332" width="30" height="14" rx="4"/><rect x="684" y="356" width="56" height="14" rx="4"/></g>
+  <rect x="706" y="262" width="12" height="40" fill="#0a060f"/>
+  <ellipse cx="712" cy="254" rx="19" ry="22" fill="url(#ck-hub)" stroke="rgba(255,255,255,.25)"/>
+  <ellipse cx="707" cy="246" rx="7" ry="9" fill="url(#ck-rim)"/>
+</g>
+
+<!-- door panels -->
+<path d="M0,420 L0,190 C40,182 130,180 196,184 L238,420 Z" fill="url(#ck-door)"/>
+<path d="M0,190 C40,182 130,180 196,184" fill="none" stroke="rgba(200,150,255,.4)" stroke-width="1.5"/>
+<path d="M1600,420 L1600,178 C1560,174 1500,176 1466,184 L1436,420 Z" fill="url(#ck-door)"/>
+<path d="M1600,178 C1560,174 1500,176 1466,184" fill="none" stroke="rgba(200,150,255,.4)" stroke-width="1.5"/>
+
+<!-- instrument cluster -->
+<rect x="888" y="68" width="250" height="132" rx="42" fill="#030106" stroke="rgba(200,150,255,.32)" stroke-width="1.4"/>
+<g class="gauge">
+<circle cx="960" cy="130" r="57" fill="#020104" stroke="rgba(255,255,255,.14)" stroke-width="1.2"/>
+<circle cx="960" cy="130" r="53" fill="url(#ck-face)" stroke="rgba(190,150,255,.35)" stroke-width="1.5"/>
+<line x1="928.9" y1="161.1" x2="924.3" y2="165.7" stroke="#d9ccff" stroke-width="1.7" opacity="1"/>
+<line x1="922.2" y1="158.0" x2="919.4" y2="160.1" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="918.5" y1="152.2" x2="915.5" y2="153.8" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="915.7" y1="145.8" x2="912.5" y2="147.0" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="916.8" y1="138.6" x2="910.5" y2="139.9" stroke="#d9ccff" stroke-width="1.7" opacity="1"/>
+<line x1="913.1" y1="132.3" x2="909.6" y2="132.5" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="913.2" y1="125.4" x2="909.7" y2="125.1" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="914.4" y1="118.6" x2="911.0" y2="117.7" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="919.3" y1="113.2" x2="913.3" y2="110.7" stroke="#d9ccff" stroke-width="1.7" opacity="1"/>
+<line x1="919.7" y1="105.8" x2="916.7" y2="104.0" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="923.7" y1="100.2" x2="921.0" y2="98.0" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="928.4" y1="95.2" x2="926.1" y2="92.6" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="935.6" y1="93.4" x2="931.9" y2="88.0" stroke="#d9ccff" stroke-width="1.7" opacity="1"/>
+<line x1="939.9" y1="87.5" x2="938.4" y2="84.3" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="946.4" y1="85.0" x2="945.3" y2="81.7" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="953.1" y1="83.5" x2="952.6" y2="80.0" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="960.0" y1="86.0" x2="960.0" y2="79.5" stroke="#d9ccff" stroke-width="1.7" opacity="1"/>
+<line x1="966.9" y1="83.5" x2="967.4" y2="80.0" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="973.6" y1="85.0" x2="974.7" y2="81.7" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="980.1" y1="87.5" x2="981.6" y2="84.3" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="984.4" y1="93.4" x2="988.1" y2="88.0" stroke="#d9ccff" stroke-width="1.7" opacity="1"/>
+<line x1="991.6" y1="95.2" x2="993.9" y2="92.6" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="996.3" y1="100.2" x2="999.0" y2="98.0" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1000.3" y1="105.8" x2="1003.3" y2="104.0" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1000.7" y1="113.2" x2="1006.7" y2="110.7" stroke="#d9ccff" stroke-width="1.7" opacity="1"/>
+<line x1="1005.6" y1="118.6" x2="1009.0" y2="117.7" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1006.8" y1="125.4" x2="1010.3" y2="125.1" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1006.9" y1="132.3" x2="1010.4" y2="132.5" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1003.2" y1="138.6" x2="1009.5" y2="139.9" stroke="#ff3df2" stroke-width="1.7" opacity="1"/>
+<line x1="1004.3" y1="145.8" x2="1007.5" y2="147.0" stroke="#ff3df2" stroke-width="0.9" opacity="0.65"/>
+<line x1="1001.5" y1="152.2" x2="1004.5" y2="153.8" stroke="#ff3df2" stroke-width="0.9" opacity="0.65"/>
+<line x1="997.8" y1="158.0" x2="1000.6" y2="160.1" stroke="#ff3df2" stroke-width="0.9" opacity="0.65"/>
+<line x1="991.1" y1="161.1" x2="995.7" y2="165.7" stroke="#ff3df2" stroke-width="1.7" opacity="1"/>
+<text x="936.0" y="154.0" text-anchor="middle" dominant-baseline="central" font-size="8.5" font-weight="600" fill="#cdbdf0">0</text>
+<text x="926.7" y="136.6" text-anchor="middle" dominant-baseline="central" font-size="8.5" font-weight="600" fill="#cdbdf0">1</text>
+<text x="928.6" y="117.0" text-anchor="middle" dominant-baseline="central" font-size="8.5" font-weight="600" fill="#cdbdf0">2</text>
+<text x="941.1" y="101.7" text-anchor="middle" dominant-baseline="central" font-size="8.5" font-weight="600" fill="#cdbdf0">3</text>
+<text x="960.0" y="96.0" text-anchor="middle" dominant-baseline="central" font-size="8.5" font-weight="600" fill="#cdbdf0">4</text>
+<text x="978.9" y="101.7" text-anchor="middle" dominant-baseline="central" font-size="8.5" font-weight="600" fill="#cdbdf0">5</text>
+<text x="991.4" y="117.0" text-anchor="middle" dominant-baseline="central" font-size="8.5" font-weight="600" fill="#cdbdf0">6</text>
+<text x="993.3" y="136.6" text-anchor="middle" dominant-baseline="central" font-size="8.5" font-weight="600" fill="#ff9cf7">7</text>
+<text x="984.0" y="154.0" text-anchor="middle" dominant-baseline="central" font-size="8.5" font-weight="600" fill="#ff9cf7">8</text>
+<text id="ck-gear" x="960" y="150" text-anchor="middle" font-size="14" font-weight="800" fill="#f3d6ff">N</text>
+<g transform="translate(960 130)"><g class="needle" id="ck-needle-tach"><line x1="0" y1="9" x2="0" y2="-47" stroke="#ff3df2" stroke-width="2.2" stroke-linecap="round" filter="url(#ck-glow)"/></g><circle r="5.5" fill="#120a1d" stroke="rgba(255,255,255,.45)" stroke-width="1"/></g>
+</g>
+<g class="gauge">
+<circle cx="1066" cy="130" r="57" fill="#020104" stroke="rgba(255,255,255,.14)" stroke-width="1.2"/>
+<circle cx="1066" cy="130" r="53" fill="url(#ck-face)" stroke="rgba(190,150,255,.35)" stroke-width="1.5"/>
+<line x1="1034.9" y1="161.1" x2="1030.3" y2="165.7" stroke="#d9ccff" stroke-width="1.7" opacity="1"/>
+<line x1="1026.9" y1="156.1" x2="1024.0" y2="158.1" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1022.6" y1="148.0" x2="1019.3" y2="149.3" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1019.9" y1="139.2" x2="1016.5" y2="139.9" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1022.0" y1="130.0" x2="1015.5" y2="130.0" stroke="#d9ccff" stroke-width="1.7" opacity="1"/>
+<line x1="1019.9" y1="120.8" x2="1016.5" y2="120.1" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1022.6" y1="112.0" x2="1019.3" y2="110.7" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1026.9" y1="103.9" x2="1024.0" y2="101.9" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1034.9" y1="98.9" x2="1030.3" y2="94.3" stroke="#d9ccff" stroke-width="1.7" opacity="1"/>
+<line x1="1039.9" y1="90.9" x2="1037.9" y2="88.0" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1048.0" y1="86.6" x2="1046.7" y2="83.3" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1056.8" y1="83.9" x2="1056.1" y2="80.5" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1066.0" y1="86.0" x2="1066.0" y2="79.5" stroke="#d9ccff" stroke-width="1.7" opacity="1"/>
+<line x1="1075.2" y1="83.9" x2="1075.9" y2="80.5" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1084.0" y1="86.6" x2="1085.3" y2="83.3" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1092.1" y1="90.9" x2="1094.1" y2="88.0" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1097.1" y1="98.9" x2="1101.7" y2="94.3" stroke="#d9ccff" stroke-width="1.7" opacity="1"/>
+<line x1="1105.1" y1="103.9" x2="1108.0" y2="101.9" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1109.4" y1="112.0" x2="1112.7" y2="110.7" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1112.1" y1="120.8" x2="1115.5" y2="120.1" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1110.0" y1="130.0" x2="1116.5" y2="130.0" stroke="#d9ccff" stroke-width="1.7" opacity="1"/>
+<line x1="1112.1" y1="139.2" x2="1115.5" y2="139.9" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1109.4" y1="148.0" x2="1112.7" y2="149.3" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1105.1" y1="156.1" x2="1108.0" y2="158.1" stroke="#d9ccff" stroke-width="0.9" opacity="0.65"/>
+<line x1="1097.1" y1="161.1" x2="1101.7" y2="165.7" stroke="#d9ccff" stroke-width="1.7" opacity="1"/>
+<text x="1042.0" y="154.0" text-anchor="middle" dominant-baseline="central" font-size="8.5" font-weight="600" fill="#cdbdf0">0</text>
+<text x="1032.0" y="130.0" text-anchor="middle" dominant-baseline="central" font-size="8.5" font-weight="600" fill="#cdbdf0">40</text>
+<text x="1042.0" y="106.0" text-anchor="middle" dominant-baseline="central" font-size="8.5" font-weight="600" fill="#cdbdf0">80</text>
+<text x="1066.0" y="96.0" text-anchor="middle" dominant-baseline="central" font-size="8.5" font-weight="600" fill="#cdbdf0">120</text>
+<text x="1090.0" y="106.0" text-anchor="middle" dominant-baseline="central" font-size="8.5" font-weight="600" fill="#cdbdf0">160</text>
+<text x="1100.0" y="130.0" text-anchor="middle" dominant-baseline="central" font-size="8.5" font-weight="600" fill="#cdbdf0">200</text>
+<text x="1090.0" y="154.0" text-anchor="middle" dominant-baseline="central" font-size="8.5" font-weight="600" fill="#cdbdf0">240</text>
+<text id="ck-speed" x="1066" y="148" text-anchor="middle" font-size="13" font-weight="800" fill="#f3d6ff">0</text><text x="1066" y="158" text-anchor="middle" font-size="5.5" fill="#a58ad6">km/h</text>
+<g transform="translate(1066 130)"><g class="needle" id="ck-needle-speed"><line x1="0" y1="9" x2="0" y2="-47" stroke="#ff3df2" stroke-width="2.2" stroke-linecap="round" filter="url(#ck-glow)"/></g><circle r="5.5" fill="#120a1d" stroke="rgba(255,255,255,.45)" stroke-width="1"/></g>
+</g>
+
+<!-- steering wheel -->
+<g class="wheel">
+  <path d="M840,300 a170,142 0 1,0 340,0 a170,142 0 1,0 -340,0 Z M878,300 a132,106 0 1,0 264,0 a132,106 0 1,0 -264,0 Z" fill="#07050b" fill-rule="evenodd" stroke="rgba(255,255,255,.16)" stroke-width="1.5"/>
+  <path d="M850,260 A170,142 0 0,1 1170,260" fill="none" stroke="url(#ck-rim)" stroke-width="3"/>
+  <path d="M859,300 a151,124 0 1,0 302,0 a151,124 0 1,0 -302,0 Z" fill="none" stroke="#e100ff" stroke-opacity=".5" stroke-width="1.4" stroke-dasharray="3 6"/>
+  <rect x="1004" y="156" width="12" height="14" rx="2" fill="#ff3df2" filter="url(#ck-glow)"/>
+  <path d="M870,308 L974,302" stroke="#09060e" stroke-width="42"/>
+  <path d="M1150,308 L1046,302" stroke="#09060e" stroke-width="42"/>
+  <path d="M1010,330 L1010,420" stroke="#09060e" stroke-width="36"/>
+  <path d="M872,308 L972,302" stroke="#150f1e" stroke-width="30"/>
+  <path d="M1148,308 L1048,302" stroke="#150f1e" stroke-width="30"/>
+  <g fill="#241b32" stroke="rgba(255,255,255,.1)"><rect x="898" y="296" width="44" height="18" rx="4"/><rect x="1078" y="296" width="44" height="18" rx="4"/></g>
+  <g fill="#ff7cf6"><circle cx="910" cy="305" r="2.2"/><circle cx="922" cy="305" r="2.2"/><circle cx="1090" cy="305" r="2.2"/><circle cx="1102" cy="305" r="2.2"/></g>
+  <ellipse cx="1010" cy="300" rx="48" ry="42" fill="url(#ck-hub)" stroke="rgba(255,255,255,.24)" stroke-width="1.5"/>
+  <circle cx="1010" cy="300" r="14" fill="none" stroke="#ff3df2" stroke-width="2" filter="url(#ck-glow)"/>
+  <text x="1010" y="301" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="800" fill="#f7e3ff">yu</text>
+</g>
+</svg>
