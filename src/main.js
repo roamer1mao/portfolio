@@ -1,4 +1,5 @@
 import cockpit from "./cockpit.svg?raw";
+import { createCode } from "./code.js";
 
 /* =========================================================
    CONFIG
@@ -99,7 +100,7 @@ const TRANSLATIONS = {
   }
 };
 
-const SOUNDCLOUD = "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fnureke-522622615%2Fpump-tekk-super-slowed-trvxer&color=%23e100ff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=false";
+const SOUNDCLOUD = "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fhardx-music%2Fbrooklynbloodjump&color=%23e100ff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=false";
 
 let lang = new URLSearchParams(location.search).get("lang") === "en" || localStorage.getItem("portfolio-language") === "en" ? "en" : "ja";
 const t = (key) => TRANSLATIONS[lang][key];
@@ -207,6 +208,8 @@ function setupScroll() {
   car.innerHTML = cockpit;
   const gear = car.querySelector("#ck-gear");
   const speed = car.querySelector("#ck-speed");
+  const code = createCode(document.getElementById("code"));
+  const welcome = document.getElementById("welcome");
 
   let queued = false;
   const update = () => {
@@ -215,6 +218,8 @@ function setupScroll() {
     const p = Math.min(Math.max(scrollY / (hero.offsetHeight - innerHeight), 0), 1);
     bar.style.setProperty("--page", (max > 0 ? scrollY / max : 0).toFixed(4));
     stage.style.setProperty("--p", p.toFixed(4));
+    code.toggle(p > 0.8);
+    welcome.classList.toggle("on", p > 0.8);
 
     // scroll is the throttle: rpm climbs through five gears, speed follows
     const g = Math.min(Math.floor(p * 5), 4);

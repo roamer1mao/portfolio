@@ -58,6 +58,31 @@ a { color: inherit; text-decoration: none; }
 }
 .lang:hover { color: var(--text); border-color: rgba(255, 255, 255, 0.3); }
 
+/* code backdrop, behind everything below the hero */
+.code-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  pointer-events: none;
+}
+.code-bg.on { opacity: 0.26; }
+.welcome {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  width: min(80vw, 900px);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  pointer-events: none;
+}
+.welcome.on { opacity: 0.18; }
+
 /* hero */
 /* tall section; the stage stays pinned while the scene plays out */
 .hero { position: relative; height: 220svh; }
