@@ -13,6 +13,8 @@ Personal one-page portfolio built with Vite, Vanilla JavaScript, and CSS. The ow
 ## Important Paths
 
 - `src/main.js`: page content and behavior
+- `src/scene.js`: hero three.js scene, loaded lazily; `src/cockpit.svg`: cockpit drawn in front of it
+- `vite.config.js` + `.github/workflows/deploy.yml`: Pages deploy; the workflow sets `BASE` from the repo name
 - `src/style.css`: visual design and responsive styles
 - `public/`: files copied directly to the build
 - `dist/`: generated build output; never edit or commit it
@@ -34,7 +36,7 @@ There is no automated test or lint script. Do not claim those checks ran.
 - Keep `node_modules/` and `dist/` untracked.
 - Preserve the existing framework-free structure unless a framework migration is explicitly requested.
 - Treat personal profile text, contact details, and outbound links as owner-controlled content.
-- Do not add analytics, external forms, deployment workflows, or publish the site without approval.
+- Do not add analytics or external forms. Do not push, change remotes, or publish the site without approval; pushing `main` triggers the Pages deploy.
 
 ## Completion Checks
 

@@ -109,12 +109,12 @@ export function start(canvas) {
     pointer.y = e.clientY / innerHeight - 0.5;
   });
 
-  const clock = new THREE.Clock();
+  const t0 = performance.now();
   let last = 0;
   let dist = 0;
   let p = 0;
   const frame = () => {
-    const t = clock.getElapsedTime();
+    const t = (performance.now() - t0) / 1000;
     const dt = Math.min(t - last, 0.05);
     last = t;
 
