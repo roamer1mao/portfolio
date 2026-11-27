@@ -199,15 +199,30 @@ function setupSpotlight() {
   });
 }
 
-function setupProgress() {
-  const root = document.documentElement;
+function setupScroll() {
+  const hero = document.getElementById("top");
+  const stage = hero.querySelector(".stage");
+  const bar = document.querySelector(".progress");
+  const car = document.getElementById("cockpit");
+  car.innerHTML = cockpit;
+  const gear = car.querySelector("#ck-gear");
+  const speed = car.querySelector("#ck-speed");
+
   let queued = false;
   const update = () => {
     queued = false;
-    const max = root.scrollHeight - innerHeight;
-    root.style.setProperty("--page", (max > 0 ? scrollY / max : 0).toFixed(4));
-    const travel = document.getElementById("top").offsetHeight - innerHeight;
-    root.style.setProperty("--p", Math.min(Math.max(scrollY / travel, 0), 1).toFixed(4));
+    const max = document.documentElement.scrollHeight - innerHeight;
+    const p = Math.min(Math.max(scrollY / (hero.offsetHeight - innerHeight), 0), 1);
+    bar.style.setProperty("--page", (max > 0 ? scrollY / max : 0).toFixed(4));
+    stage.style.setProperty("--p", p.toFixed(4));
+
+    // scroll is the throttle: rpm climbs through five gears, speed follows
+    const g = Math.min(Math.floor(p * 5), 4);
+    car.style.setProperty("--tach", (0.2 + (p * 5 - g) * 0.58 + g * 0.03).toFixed(3));
+    const gs = p < 0.01 ? "N" : String(g + 1);
+    const ss = String(Math.round(p * 220));
+    if (gear.textContent !== gs) gear.textContent = gs;
+    if (speed.textContent !== ss) speed.textContent = ss;
   };
   addEventListener("scroll", () => {
     if (queued) return;
@@ -216,25 +231,6 @@ function setupProgress() {
   }, { passive: true });
   addEventListener("resize", update);
   update();
-}
-
-function setupCockpit() {
-  const car = document.getElementById("cockpit");
-  car.innerHTML = cockpit;
-  const gear = car.querySelector("#ck-gear");
-  const speed = car.querySelector("#ck-speed");
-
-  // scroll is the throttle: rpm climbs through five gears, speed follows
-  const drive = () => {
-    const p = parseFloat(document.documentElement.style.getPropertyValue("--p")) || 0;
-    const g = Math.min(Math.floor(p * 5), 4);
-    car.style.setProperty("--tach", (0.2 + (p * 5 - g) * 0.58 + g * 0.03).toFixed(3));
-    car.style.setProperty("--p", p);
-    gear.textContent = p < 0.01 ? "N" : g + 1;
-    speed.textContent = Math.round(p * 220);
-  };
-  addEventListener("scroll", () => requestAnimationFrame(drive), { passive: true });
-  drive();
 
   addEventListener("pointermove", (e) => {
     car.style.setProperty("--steer", `${(e.clientX / innerWidth - 0.5) * 44}deg`);
@@ -260,9 +256,16 @@ document.addEventListener("DOMContentLoaded", () => {
   setupActiveNav();
   setupReveal();
   setupSpotlight();
-  setupProgress();
-  setupCockpit();
-  import("./scene.js").then(({ start }) => start(document.getElementById("scene")));
+  setupScroll();
+  // keep first paint light: fetch three.js when idle, and skip it on data saver
+  if (!navigator.connection?.saveData) {
+    const load = () =>
+      import("./scene.js")
+        .then(({ start }) => start(document.getElementById("scene")))
+        .catch((e) => console.warn("3D scene off:", e.message));
+    if ("requestIdleCallback" in window) requestIdleCallback(load, { timeout: 2000 });
+    else setTimeout(load, 300);
+  }
 
   document.getElementById("language-btn").addEventListener("click", () => applyLanguage(lang === "ja" ? "en" : "ja"));
   document.getElementById("music-btn").addEventListener("click", toggleMusic);
